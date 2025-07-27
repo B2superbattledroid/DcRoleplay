@@ -47,6 +47,38 @@ To create a production build:
 npm run build
 ```
 
+## Deployment
+
+### Railway Deployment
+
+This application is configured for deployment on Railway.
+
+1. **Connect to Railway**: Link your GitHub repository to Railway
+2. **Automatic Deployment**: Railway will automatically detect the React app and deploy it
+3. **Environment Variables**: Railway will automatically set the `PORT` environment variable
+4. **Custom Domain**: You can add a custom domain in Railway settings
+
+### Manual Railway Deployment
+
+If you prefer manual deployment:
+
+1. Install Railway CLI: `npm install -g @railway/cli`
+2. Login: `railway login`
+3. Initialize: `railway init`
+4. Deploy: `railway up`
+
+### Docker Deployment
+
+The application includes a Dockerfile for containerized deployment:
+
+```bash
+# Build the Docker image
+docker build -t golden-age-timeline .
+
+# Run the container
+docker run -p 3000:3000 golden-age-timeline
+```
+
 ## Project Structure
 
 ```
