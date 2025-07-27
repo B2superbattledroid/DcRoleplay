@@ -15,7 +15,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "react-scripts start",
-    "prod": "npm run build && serve -s build -l $PORT"
+    "prod": "npm run build && serve -s build -l $PORT",
+    "test:ci": "react-scripts test --watchAll=false --passWithNoTests --coverage --watchAll=false"
   },
   "eslintConfig": {
     "extends": [
