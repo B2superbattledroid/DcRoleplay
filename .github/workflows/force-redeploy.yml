@@ -14,7 +14,7 @@ on:
 
 env:
   RAILWAY_PROJECT_ID: 3a915e17-0b3c-4900-adb4-5aab85f39fdd
-  RAILWAY_SERVICE_NAME: frontend
+  RAILWAY_SERVICE_NAME: golden-age-timeline
 
 jobs:
   force-redeploy:
