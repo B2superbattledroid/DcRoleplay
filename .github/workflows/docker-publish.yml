@@ -84,7 +84,7 @@ jobs:
 
       - name: Trigger Railway deploy
         run: |
-          railway link -p 3a915e17-0b3c-4900-adb4-5aab85f39fdd -s frontend
-          railway redeploy --service frontend -y
+          railway link -p 3a915e17-0b3c-4900-adb4-5aab85f39fdd -s golden-age-timeline
+          railway redeploy --service golden-age-timeline -y
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }} 
