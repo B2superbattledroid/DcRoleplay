@@ -1,0 +1,420 @@
+.timeline-container {
+  padding: 2rem 0;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.1));
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
+  position: relative;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="comic-dots" patternUnits="userSpaceOnUse" width="20" height="20"><circle cx="10" cy="10" r="1" fill="rgba(255,215,0,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23comic-dots)"/></svg>');
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+/* Custom styles for react-chrono components */
+.custom-card {
+  background: linear-gradient(135deg, #1a1a2e, #16213e) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2) !important;
+  border: 2px solid rgba(255, 215, 0, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.1) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.custom-card:hover::before {
+  transform: translateX(100%);
+}
+
+.custom-card:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.3) !important;
+  border-color: rgba(255, 215, 0, 0.6) !important;
+}
+
+.custom-card-media {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  margin-bottom: 1rem !important;
+}
+
+.custom-card-title {
+  font-family: 'Orbitron', monospace !important;
+  font-size: 1.3rem !important;
+  font-weight: 900 !important;
+  color: #ffd700 !important;
+  margin-bottom: 0.5rem !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.custom-card-subtitle {
+  font-size: 0.9rem !important;
+  color: #ff8c00 !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Override react-chrono's default card text styling */
+.custom-card-text,
+.timeline-container .react-chrono-timeline .react-chrono-timeline-card .react-chrono-timeline-card-details,
+.timeline-container .react-chrono-timeline .react-chrono-timeline-card .react-chrono-timeline-card-details * {
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+  text-align: left !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.custom-card-text p,
+.timeline-container .react-chrono-timeline .react-chrono-timeline-card .react-chrono-timeline-card-details p {
+  margin-bottom: 0.75rem !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.custom-card-text p:last-child,
+.timeline-container .react-chrono-timeline .react-chrono-timeline-card .react-chrono-timeline-card-details p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Timeline navigation controls */
+.timeline-container .react-chrono-timeline {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.1)) !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  backdrop-filter: blur(10px) !important;
+  border: 2px solid rgba(255, 215, 0, 0.3) !important;
+}
+
+/* Timeline circles */
+.timeline-container .react-chrono-timeline .react-chrono-timeline-item {
+  background: linear-gradient(135deg, #ffd700, #ff8c00) !important;
+  border: 3px solid #1a1a2e !important;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4) !important;
+  position: relative;
+}
+
+.timeline-container .react-chrono-timeline .react-chrono-timeline-item::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffd700, #ff8c00, #ff4500, #ffd700);
+  border-radius: 50%;
+  z-index: -1;
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.timeline-container .react-chrono-timeline .react-chrono-timeline-item:hover {
+  background: linear-gradient(135deg, #ff4500, #ff8c00) !important;
+  transform: scale(1.2) !important;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.6) !important;
+}
+
+/* Timeline line */
+.timeline-container .react-chrono-timeline .react-chrono-timeline-line {
+  background: linear-gradient(90deg, #ffd700, #ff8c00, #ff4500) !important;
+  height: 6px !important;
+  border-radius: 3px !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4) !important;
+}
+
+/* Enhanced scrolling for vertical timeline */
+.custom-timeline-scrollable {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: #ffd700 #1a1a2e !important;
+  height: 70vh !important;
+  max-height: 70vh !important;
+  min-height: 500px !important;
+}
+
+/* Custom scrollbar styling for webkit browsers */
+.custom-timeline-scrollable::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.custom-timeline-scrollable::-webkit-scrollbar-track {
+  background: rgba(255, 215, 0, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+.custom-timeline-scrollable::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ffd700, #ff8c00) !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(255, 215, 0, 0.3) !important;
+}
+
+.custom-timeline-scrollable::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff8c00, #ff4500) !important;
+}
+
+/* Timeline container for vertical layout */
+.timeline-container {
+  padding: 1rem 0 !important;
+  position: relative !important;
+  height: 70vh !important;
+  max-height: 70vh !important;
+  min-height: 500px !important;
+}
+
+/* Ensure navigation controls stay fixed at top */
+.timeline-container .react-chrono-timeline .react-chrono-timeline-controls {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.1)) !important;
+  backdrop-filter: blur(10px) !important;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.3) !important;
+  padding: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Ensure timeline items are properly spaced for vertical scrolling */
+.timeline-container .react-chrono-timeline .react-chrono-timeline-item {
+  margin: 20px 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Timeline content area for vertical alternating layout */
+.timeline-container .react-chrono-timeline .react-chrono-timeline-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  padding: 20px 0 !important;
+  align-items: center !important;
+}
+
+/* Alternating card positioning */
+.timeline-container .react-chrono-timeline .react-chrono-timeline-item:nth-child(odd) .react-chrono-timeline-card {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+.timeline-container .react-chrono-timeline .react-chrono-timeline-item:nth-child(even) .react-chrono-timeline-card {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+/* Vertical timeline line styling */
+.timeline-container .react-chrono-timeline .react-chrono-timeline-line {
+  background: linear-gradient(180deg, #ffd700, #ff8c00, #ff4500) !important;
+  width: 6px !important;
+  border-radius: 3px !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4) !important;
+}
+
+/* Slideshow enhancements */
+.timeline-container .react-chrono-timeline .react-chrono-timeline-item.active {
+  animation: goldenGlow 2s ease-in-out infinite alternate !important;
+}
+
+@keyframes goldenGlow {
+  0% {
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4) !important;
+  }
+  100% {
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.8) !important;
+  }
+}
+
+/* Slideshow controls styling */
+.timeline-container .react-chrono-timeline .react-chrono-timeline-controls button {
+  background: linear-gradient(135deg, #ffd700, #ff8c00) !important;
+  border: 2px solid #1a1a2e !important;
+  color: #1a1a2e !important;
+  font-weight: bold !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3) !important;
+}
+
+.timeline-container .react-chrono-timeline .react-chrono-timeline-controls button:hover {
+  background: linear-gradient(135deg, #ff8c00, #ff4500) !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.5) !important;
+}
+
+.timeline-container .react-chrono-timeline .react-chrono-timeline-controls button:disabled {
+  background: rgba(255, 215, 0, 0.3) !important;
+  color: rgba(26, 26, 46, 0.5) !important;
+  cursor: not-allowed !important;
+}
+
+/* Additional overrides for react-chrono card details */
+.timeline-container .react-chrono-timeline .react-chrono-timeline-card .react-chrono-timeline-card-details,
+.timeline-container .react-chrono-timeline .react-chrono-timeline-card .react-chrono-timeline-card-details div,
+.timeline-container .react-chrono-timeline .react-chrono-timeline-card .react-chrono-timeline-card-details span {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Target react-chrono's specific CSS classes */
+.timeline-container [class*="TimelineContentDetailsWrapper"],
+.timeline-container [class*="TimelineContentDetails"],
+.timeline-container [class*="TimelineSubContent"],
+.timeline-container [class*="card-description"],
+.timeline-container [class*="rc-card-text"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+  --rc-gradient-color: transparent !important;
+}
+
+/* Target any element with background: #ffffff */
+.timeline-container div[style*="background: #ffffff"],
+.timeline-container div[style*="background:#ffffff"],
+.timeline-container div[style*="background-color: #ffffff"],
+.timeline-container div[style*="background-color:#ffffff"] {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Slideshow progress indicator */
+.timeline-container .react-chrono-timeline .react-chrono-timeline-progress {
+  background: rgba(255, 215, 0, 0.2) !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+}
+
+.timeline-container .react-chrono-timeline .react-chrono-timeline-progress-bar {
+  background: linear-gradient(90deg, #ffd700, #ff8c00, #ff4500) !important;
+  height: 4px !important;
+  border-radius: 2px !important;
+  transition: width 0.1s ease !important;
+}
+
+/* Responsive design for vertical timeline */
+@media (max-width: 1200px) {
+  .timeline-container {
+    height: 65vh !important;
+    max-height: 65vh !important;
+    min-height: 450px !important;
+  }
+  
+  .custom-timeline-scrollable {
+    height: 65vh !important;
+    max-height: 65vh !important;
+    min-height: 450px !important;
+  }
+  
+  .custom-card {
+    width: 350px !important;
+  }
+  
+  .custom-card-title {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-container {
+    height: 60vh !important;
+    max-height: 60vh !important;
+    min-height: 400px !important;
+    padding: 0.5rem 0 !important;
+  }
+  
+  .custom-timeline-scrollable {
+    height: 60vh !important;
+    max-height: 60vh !important;
+    min-height: 400px !important;
+  }
+  
+  .custom-card {
+    width: 300px !important;
+    margin: 0 0.5rem !important;
+  }
+  
+  .custom-card-title {
+    font-size: 1rem !important;
+  }
+  
+  .custom-card-text {
+    font-size: 0.85rem !important;
+  }
+  
+  .timeline-container .react-chrono-timeline .react-chrono-timeline-item {
+    margin: 15px 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-container {
+    height: 55vh !important;
+    max-height: 55vh !important;
+    min-height: 350px !important;
+  }
+  
+  .custom-timeline-scrollable {
+    height: 55vh !important;
+    max-height: 55vh !important;
+    min-height: 350px !important;
+  }
+  
+  .custom-card {
+    width: 280px !important;
+  }
+  
+  .custom-card-title {
+    font-size: 0.9rem !important;
+  }
+  
+  .custom-card-text {
+    font-size: 0.8rem !important;
+  }
+} 
