@@ -84,7 +84,7 @@ jobs:
 
       - name: Trigger Railway deploy
         run: |
-          railway link -p a93c9e29-e643-4bda-abe3-a01f50e2057e -s frontend
+          railway link -p 3a915e17-0b3c-4900-adb4-5aab85f39fdd -s frontend
           railway redeploy --service frontend -y
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }} 
