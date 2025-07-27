@@ -99,6 +99,9 @@ docker build -t golden-age-timeline .
 
 # Run Docker container
 docker run -p 3000:3000 golden-age-timeline
+
+# Update dependencies (if package-lock.json is out of sync)
+npm install --legacy-peer-deps
 ```
 
 ### Environment Variables
