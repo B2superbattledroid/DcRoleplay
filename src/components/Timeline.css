@@ -1,11 +1,36 @@
 .timeline-container {
-  padding: 2rem 0;
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.1));
   border-radius: 16px;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 215, 0, 0.3);
   box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
   position: relative;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible !important;
+}
+
+/* Ensure timeline uses full container space */
+.timeline-container > div {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible !important;
+}
+
+/* Fix any clipping issues with timeline content */
+.timeline-container .react-chrono {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Ensure timeline items are not clipped */
+.timeline-container .react-chrono * {
+  overflow: visible !important;
 }
 
 .timeline-container::before {
@@ -416,5 +441,169 @@
   
   .custom-card-text {
     font-size: 0.8rem !important;
+  }
+} 
+
+/* Custom styles for react-chrono toolbar to match website theme */
+.ToolbarWrapper-sc-exupb5-0 {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(22, 33, 62, 0.95)) !important;
+  border: 2px solid #ff4500 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3) !important;
+  margin: 0 !important;
+}
+
+.ToolbarWrapper-sc-cif21b-6 {
+  margin: 0 !important;
+}
+
+/* Timeline navigation controls */
+.TimelineNavWrapper-sc-1apb8f9-1 {
+  background: rgba(255, 215, 0, 0.15) !important;
+  border-radius: 8px !important;
+  padding: 0.5rem !important;
+  border: 1px solid rgba(255, 215, 0, 0.4) !important;
+}
+
+/* Navigation buttons */
+.TimelineNavButton-sc-1apb8f9-3 {
+  background: linear-gradient(135deg, #ffd700, #ffa500) !important;
+  border: 2px solid rgba(255, 215, 0, 0.8) !important;
+  border-radius: 6px !important;
+  color: #1a1a2e !important;
+  padding: 0.75rem !important;
+  margin: 0 0.25rem !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4) !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.TimelineNavButton-sc-1apb8f9-3:hover:not([aria-disabled="true"]) {
+  background: linear-gradient(135deg, #ffed4e, #ffb347) !important;
+  border-color: #ff4500 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 3px 10px rgba(255, 215, 0, 0.5) !important;
+}
+
+.TimelineNavButton-sc-1apb8f9-3[aria-disabled="true"] {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  background: rgba(128, 128, 128, 0.3) !important;
+  border-color: rgba(128, 128, 128, 0.5) !important;
+}
+
+/* SVG icons in buttons */
+.TimelineNavButton-sc-1apb8f9-3 svg {
+  stroke: #1a1a2e !important;
+  fill: none !important;
+  stroke-width: 2.5 !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* Search wrapper styling */
+.SearchWrapper-sc-cif21b-9 {
+  background: rgba(255, 215, 0, 0.1) !important;
+  border-radius: 8px !important;
+  padding: 0.5rem !important;
+  border: 1px solid rgba(255, 215, 0, 0.3) !important;
+}
+
+/* Search input styling */
+.SearchInput-sc-cif21b-10 {
+  background: rgba(26, 26, 46, 0.9) !important;
+  border: 2px solid rgba(255, 215, 0, 0.6) !important;
+  border-radius: 8px !important;
+  color: #ffd700 !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+.SearchInput-sc-cif21b-10:focus {
+  outline: none !important;
+  border-color: #ff4500 !important;
+  box-shadow: 0 0 0 3px rgba(255, 69, 0, 0.3) !important;
+  background: rgba(26, 26, 46, 1) !important;
+}
+
+.SearchInput-sc-cif21b-10::placeholder {
+  color: rgba(255, 215, 0, 0.6) !important;
+  font-style: italic !important;
+}
+
+/* Extra controls (layout, density, etc.) */
+.ExtraControls-sc-cif21b-7 {
+  background: rgba(255, 215, 0, 0.15) !important;
+  border-radius: 8px !important;
+  padding: 0.5rem !important;
+  border: 1px solid rgba(255, 215, 0, 0.4) !important;
+}
+
+/* Control wrapper buttons */
+.control-wrapper .Selecter-sc-168kw5q-2 {
+  background: linear-gradient(135deg, #ffd700, #ffa500) !important;
+  border: 2px solid rgba(255, 215, 0, 0.8) !important;
+  border-radius: 6px !important;
+  color: #1a1a2e !important;
+  padding: 0.5rem !important;
+  margin: 0 0.25rem !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4) !important;
+}
+
+.control-wrapper .Selecter-sc-168kw5q-2:hover {
+  background: linear-gradient(135deg, #ffed4e, #ffb347) !important;
+  border-color: #ff4500 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.5) !important;
+}
+
+/* Icons in control buttons */
+.SelecterIcon-sc-168kw5q-3 svg {
+  color: #1a1a2e !important;
+}
+
+/* Toolbar list items */
+.ToolbarListItem-sc-exupb5-1 {
+  margin: 0.5rem !important;
+}
+
+/* Content wrapper */
+.ContentWrapper-sc-exupb5-3 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Search wrapper */
+.SearchWrapper-sc-cif21b-9 {
+  min-width: 250px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ToolbarWrapper-sc-exupb5-0 {
+    padding: 1rem !important;
+  }
+  
+  .SearchWrapper-sc-cif21b-9 {
+    min-width: 200px !important;
+  }
+  
+  .TimelineNavButton-sc-1apb8f9-3 {
+    padding: 0.4rem !important;
+    margin: 0 0.15rem !important;
+  }
+  
+  .control-wrapper .Selecter-sc-168kw5q-2 {
+    padding: 0.4rem !important;
+    margin: 0 0.15rem !important;
   }
 } 
